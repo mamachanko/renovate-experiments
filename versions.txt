@@ -1,0 +1,14 @@
+# renovate: datasource=github-releases depName=svu packageName=caarlos0/svu
+SVU_VERSION=3.2.1
+
+# renovate: datasource=github-releases depName=golangci-lint packageName=golangci/golangci-lint
+GOLANGCILINT_VERSION=2.1.6
+
+# renovate: datasource=golang-version depName=golang
+GOLANG_VERSION=1.24.3
+
+# renovate: datasource=docker depName=stemcell packageName=ghcr.io/cloudfoundry/ubuntu-jammy-stemcell
+STEMCELL_VERSION=1.824
+
+# renovate: datasource=github-releases depName=yq packageName=mikefarah/yq
+YQ_VERSION=4.40.0
