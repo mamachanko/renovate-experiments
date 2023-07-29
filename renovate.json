@@ -1,0 +1,25 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "rebaseWhen": "behind-base-branch",
+  "enabledManagers": [
+    "custom.regex"
+  ],
+  "extends": [
+    "config:recommended"
+  ],
+  "prConcurrentLimit": 0,
+  "prHourlyLimit": 0,
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Update tool versions matching '*_VERSION' and marked with '# renovate: datasource=<datasource> depName=<depName>( packageName=<packageName>)'. See https://regex101.com/r/PeGsNX/1.",
+      "managerFilePatterns": [
+        "/.*/"
+      ],
+      "matchStrings": [
+        "#\\!? renovate: datasource=(?<datasource>[a-z-]+)?(?: depName=(?<depName>[a-z-]+))?(?: packageName=(?<packageName>\\S+))?(?: versioning=(?<versioning>[a-z-]+))?\\s+.+_VERSION(\\s?.?=\\s?|: )(?<yamlAnchor>\\&[a-z-]+ )?(?<currentValue>.+?)\\s"
+      ]
+    }
+  ],
+  "semanticCommits": "enabled"
+}
