@@ -42,6 +42,7 @@ MAKEFLAGS += --no-builtin-rules
 GOPRIVATE ?= gitlab.eng.vmware.com/*
 
 RENOVATE_REPOSITORY ?= mamachanko/renovate-experiments
+RENOVATE_LOG_LEVEL ?= DEBUG
 
 .PHONY: help
 help: ## Describe all make targets (default)
@@ -51,20 +52,26 @@ help: ## Describe all make targets (default)
 build:
 	go run .
 
-.PHONY: renovate
-renovate:
+.PHONY: renovate-in-docker
+renovate-in-docker:
 ifndef GITHUB_COM_TOKEN
 	$(error GITHUB_COM_TOKEN must be set)
 endif
+ifndef GITLAB_TOKEN
+	$(error GITLAB_TOKEN must be set)
+endif
 	docker run \
 	  --rm \
-	  --terminal \
+	  --tty \
 	  --interactive \
-		--volume "$(PWD)":/src \
+	  --volume "$(PWD)":/src \
 	  --workdir /src \
 	  --env GOPRIVATE=$(GOPRIVATE) \
-	  ghcr.io/renovatebot/renovate \
+	  --env LOG_LEVEL=$(RENOVATE_LOG_LEVEL) \
+	  ghcr.io/renovatebot/renovate:36.25.5 \
 	  renovate \
 	    --platform github \
 	    --token $${GITHUB_COM_TOKEN} \
+	    --dry-run \
+	    --host-rules "$$(jq -nc ".matchHost = \"https://gitlab.eng.vmware.com\" | .token = env.GITLAB_TOKEN")" \
 	    $(RENOVATE_REPOSITORY)
