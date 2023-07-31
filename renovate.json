@@ -7,9 +7,6 @@
   "extends": [
     "config:recommended"
   ],
-  "postUpdateOptions": [
-    "gomodTidy"
-  ],
   "prConcurrentLimit": 0,
   "prHourlyLimit": 0,
   "semanticCommits": "enabled"
