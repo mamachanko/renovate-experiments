@@ -22,5 +22,21 @@
       "datasourceTemplate": "npm"
     }
   ],
+  "packageRules": [
+    {
+      "labels": [
+        "dependencies",
+        "javascript"
+      ],
+      "matchFileNames": [
+        "Makefile"
+      ],
+      "schedule": [
+        "every sunday"
+      ],
+      "semanticCommitScope": "node-tooling",
+      "semanticCommitType": "ci"
+    }
+  ],
   "semanticCommits": "enabled"
 }
