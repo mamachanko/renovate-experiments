@@ -20,6 +20,16 @@
       ],
       "depNameTemplate": "renovate",
       "datasourceTemplate": "npm"
+    },
+    {
+      "fileMatch": [
+        "Makefile"
+      ],
+      "matchStrings": [
+        "GOLANGCILINT_VERSION \\?= (?<currentValue>.*?)\\n"
+      ],
+      "depNameTemplate": "golangci/golangci-lint",
+      "datasourceTemplate": "github-releases"
     }
   ],
   "packageRules": [

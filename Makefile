@@ -45,6 +45,8 @@ RENOVATE_VERSION ?= 36.25.5
 RENOVATE_REPOSITORY ?= mamachanko/renovate-experiments
 RENOVATE_LOG_LEVEL ?= DEBUG
 
+GOLANGCILINT_VERSION ?= 1.53.2
+
 .PHONY: help
 help: ## Describe all make targets (default)
 	@./Makefile_help.awk $(MAKEFILE_LIST)
