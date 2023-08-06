@@ -41,6 +41,7 @@ MAKEFLAGS += --no-builtin-rules
 
 GOPRIVATE ?= gitlab.eng.vmware.com/*
 
+RENOVATE_VERSION ?= 36.25.5
 RENOVATE_REPOSITORY ?= mamachanko/renovate-experiments
 RENOVATE_LOG_LEVEL ?= DEBUG
 
@@ -68,7 +69,7 @@ endif
 	  --workdir /src \
 	  --env GOPRIVATE=$(GOPRIVATE) \
 	  --env LOG_LEVEL=$(RENOVATE_LOG_LEVEL) \
-	  ghcr.io/renovatebot/renovate:36.25.5 \
+	  ghcr.io/renovatebot/renovate:$(RENOVATE_VERSION) \
 	  renovate \
 	    --platform github \
 	    --token $${GITHUB_COM_TOKEN} \

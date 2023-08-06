@@ -2,12 +2,25 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "rebaseWhen": "behind-base-branch",
   "enabledManagers": [
-    "gomod"
+    "gomod",
+    "regex"
   ],
   "extends": [
     "config:recommended"
   ],
   "prConcurrentLimit": 0,
   "prHourlyLimit": 0,
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "Makefile"
+      ],
+      "matchStrings": [
+        "RENOVATE_VERSION \\?= (?<currentValue>.*?)\\n"
+      ],
+      "depNameTemplate": "renovate",
+      "datasourceTemplate": "npm"
+    }
+  ],
   "semanticCommits": "enabled"
 }
