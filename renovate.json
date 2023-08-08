@@ -30,6 +30,16 @@
       ],
       "depNameTemplate": "golangci/golangci-lint",
       "datasourceTemplate": "github-releases"
+    },
+    {
+      "fileMatch": [
+        "pipeline.yaml"
+      ],
+      "matchStrings": [
+        "resource_repository: (?<registryUrlTemplate>.*-resource?)\\n\\s*tag: (?<currentValue>.*?)\\n"
+      ],
+      "depNameTemplate": "{{{registryUrlTemplate}}}",
+      "datasourceTemplate": "docker"
     }
   ],
   "packageRules": [

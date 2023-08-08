@@ -1,0 +1,22 @@
+stuff:
+  - name: slack-notifier
+    type: registry-image
+    source:
+      repository: harbor-repo.vmware.com/sso/ci-golang1.19-docker
+      tag: dev
+resource_types:
+  - name: slack-notifier
+    type: registry-image
+    source:
+      repository: harbor-repo.vmware.com/dockerhub-proxy-cache/arbourd/concourse-slack-alert-resource
+      tag: v0.16.0
+  - name: build-info
+    type: registry-image
+    source:
+      repository: devtools-docker-local.artifactory.eng.vmware.com/vmware/runway/resourcetypes/buildinfo-resource
+      tag: 3.0.0
+  - name: coverity
+    type: registry-image
+    source:
+      repository: devtools-docker.artifactory.eng.vmware.com/vmware/runway/resourcetypes/coverity-resource
+      tag: 2.9.0
