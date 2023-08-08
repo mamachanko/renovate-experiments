@@ -54,7 +54,24 @@
       "schedule": [
         "every sunday"
       ],
-      "semanticCommitScope": "node-tooling",
+      "semanticCommitScope": "tooling",
+      "semanticCommitType": "ci"
+    },
+    {
+      "matchFileNames": [
+        "go-upstream/**"
+      ],
+      "semanticCommitScope": "upstream",
+      "semanticCommitType": "fix"
+    },
+    {
+      "excludeDepNames": [
+        "github.com/mamachanko/renovate-experiments/go-upstream"
+      ],
+      "matchFileNames": [
+        "go-downstream/**"
+      ],
+      "semanticCommitScope": "downstream",
       "semanticCommitType": "ci"
     }
   ],

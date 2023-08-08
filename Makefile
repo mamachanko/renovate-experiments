@@ -52,7 +52,18 @@ help: ## Describe all make targets (default)
 	@./Makefile_help.awk $(MAKEFILE_LIST)
 
 .PHONY: build
-build:
+build: build-upstream build-downstream
+
+.PHONY: build-upstream
+build-upstream:
+	cd go-upstream/
+	go mod tidy
+	go run .
+
+.PHONY: build-downstream
+build-downstream:
+	cd go-downstream/
+	go mod tidy
 	go run .
 
 .PHONY: renovate-in-docker

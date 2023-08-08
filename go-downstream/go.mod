@@ -1,8 +1,9 @@
-module github.com/mamachanko/renovate-experiments
+module github.com/mamachanko/renovate-experiments/go-downstream
 
 go 1.20
 
 require (
+	github.com/mamachanko/renovate-experiments/go-upstream v0.0.0
 	gitlab.eng.vmware.com/services-control-plane/resource-claims v0.0.0-20230414165452-e8e4bba222fe
 	k8s.io/api v0.26.0
 )
@@ -64,3 +65,5 @@ require (
 	sigs.k8s.io/structured-merge-diff/v4 v4.2.3 // indirect
 	sigs.k8s.io/yaml v1.3.0 // indirect
 )
+
+replace github.com/mamachanko/renovate-experiments/go-upstream => ../go-upstream
