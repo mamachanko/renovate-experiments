@@ -59,20 +59,11 @@
     },
     {
       "matchFileNames": [
-        "a-go-upstream/**"
+        "a-go-upstream/**",
+        "b-go-downstream/**"
       ],
       "semanticCommitScope": "upstream",
       "semanticCommitType": "fix"
-    },
-    {
-      "excludeDepNames": [
-        "github.com/mamachanko/renovate-experiments/go-upstream"
-      ],
-      "matchFileNames": [
-        "b-go-downstream/**"
-      ],
-      "semanticCommitScope": "downstream",
-      "semanticCommitType": "ci"
     }
   ],
   "semanticCommits": "enabled"
