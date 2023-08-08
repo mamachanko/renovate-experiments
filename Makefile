@@ -56,13 +56,13 @@ build: build-upstream build-downstream
 
 .PHONY: build-upstream
 build-upstream:
-	cd go-upstream/
+	cd a-go-upstream/
 	go mod tidy
 	go run .
 
 .PHONY: build-downstream
 build-downstream:
-	cd go-downstream/
+	cd b-go-downstream/
 	go mod tidy
 	go run .
 
