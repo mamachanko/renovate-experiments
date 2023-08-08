@@ -33,10 +33,10 @@
     },
     {
       "fileMatch": [
-        "pipeline.yaml"
+        "^.*pipeline\\.yml$"
       ],
       "matchStrings": [
-        "resource_repository: (?<registryUrlTemplate>.*-resource?)\\n\\s*tag: (?<currentValue>.*?)\\n"
+        "repository: (?<registryUrlTemplate>.*-resource?)\\n\\s*tag: (?<currentValue>.*?)\\n"
       ],
       "depNameTemplate": "{{{registryUrlTemplate}}}",
       "datasourceTemplate": "docker"

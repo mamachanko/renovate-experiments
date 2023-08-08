@@ -5,11 +5,6 @@ stuff:
       repository: harbor-repo.vmware.com/sso/ci-golang1.19-docker
       tag: dev
 resource_types:
-  - name: slack-notifier
-    type: registry-image
-    source:
-      repository: harbor-repo.vmware.com/dockerhub-proxy-cache/arbourd/concourse-slack-alert-resource
-      tag: v0.16.0
   - name: build-info
     type: registry-image
     source:
