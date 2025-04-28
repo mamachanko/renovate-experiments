@@ -39,8 +39,6 @@ SHELL := bash
 MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
-GOPRIVATE ?= gitlab.eng.vmware.com/*
-
 RENOVATE_VERSION ?= 36.25.5
 RENOVATE_REPOSITORY ?= mamachanko/renovate-experiments
 RENOVATE_LOG_LEVEL ?= DEBUG
@@ -71,9 +69,6 @@ renovate-in-docker:
 ifndef GITHUB_COM_TOKEN
 	$(error GITHUB_COM_TOKEN must be set)
 endif
-ifndef GITLAB_TOKEN
-	$(error GITLAB_TOKEN must be set)
-endif
 	docker run \
 	  --rm \
 	  --tty \
@@ -87,5 +82,4 @@ endif
 	    --platform github \
 	    --token $${GITHUB_COM_TOKEN} \
 	    --dry-run \
-	    --host-rules "$$(jq -nc ".matchHost = \"https://gitlab.eng.vmware.com\" | .token = env.GITLAB_TOKEN")" \
 	    $(RENOVATE_REPOSITORY)
