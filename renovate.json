@@ -12,58 +12,12 @@
   "prHourlyLimit": 0,
   "regexManagers": [
     {
-      "fileMatch": [
-        "Makefile"
-      ],
+      "customType": "regex",
+      "description": "Update tool versions matching '*_VERSION' and marked with '# renovate: datasource=<datasource> depName=<depName>( packageName=<packageName>)'. See https://regex101.com/r/PeGsNX/1.",
+      "fileMatch": ["Makefile", "ci/.*"],
       "matchStrings": [
-        "RENOVATE_VERSION \\?= (?<currentValue>.*?)\\n"
-      ],
-      "depNameTemplate": "renovate",
-      "datasourceTemplate": "npm"
-    },
-    {
-      "fileMatch": [
-        "Makefile"
-      ],
-      "matchStrings": [
-        "GOLANGCILINT_VERSION \\?= (?<currentValue>.*?)\\n"
-      ],
-      "depNameTemplate": "golangci/golangci-lint",
-      "datasourceTemplate": "github-releases"
-    },
-    {
-      "fileMatch": [
-        "^.*pipeline\\.yml$"
-      ],
-      "matchStrings": [
-        "repository: (?<registryUrlTemplate>.*-resource?)\\n\\s*tag: (?<currentValue>.*?)\\n"
-      ],
-      "depNameTemplate": "{{{registryUrlTemplate}}}",
-      "datasourceTemplate": "docker"
-    }
-  ],
-  "packageRules": [
-    {
-      "labels": [
-        "dependencies",
-        "javascript"
-      ],
-      "matchFileNames": [
-        "Makefile"
-      ],
-      "schedule": [
-        "every sunday"
-      ],
-      "semanticCommitScope": "tooling",
-      "semanticCommitType": "ci"
-    },
-    {
-      "matchFileNames": [
-        "a-go-upstream/**",
-        "b-go-downstream/**"
-      ],
-      "semanticCommitScope": "upstream",
-      "semanticCommitType": "fix"
+        "#\\!? renovate: datasource=(?<datasource>[a-z-]+)?(?: depName=(?<depName>[a-z-]+))?(?: packageName=(?<packageName>[a-z\\/-]+))?(?: versioning=(?<versioning>[a-z-]+))?\\s+.+_VERSION(\\s?.?=\\s?|: )(?<yamlAnchor>\\&[a-z-]+ )?(?<currentValue>.+?)\\s"
+      ]
     }
   ],
   "semanticCommits": "enabled"
