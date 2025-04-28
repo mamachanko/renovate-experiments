@@ -47,6 +47,9 @@ RENOVATE_LOG_LEVEL ?= DEBUG
 # renovate: datasource=github-releases depName=golangci-lint packageName=golangci/golangci-lint
 GOLANGCILINT_VERSION ?= 1.53.2
 
+# renovate: datasource=github-releases depName=svu packageName=caarlos0/svu
+SVU_VERSION ?= 3.2.0
+
 .PHONY: help
 help: ## Describe all make targets (default)
 	@./Makefile_help.awk $(MAKEFILE_LIST)
