@@ -78,7 +78,6 @@ endif
 	  --rm \
 	  --tty \
 	  --interactive \
-	  --volume "$(PWD)":/src \
 	  --workdir /src \
 	  --env LOG_LEVEL=$(RENOVATE_LOG_LEVEL) \
 	  ghcr.io/renovatebot/renovate:$(RENOVATE_VERSION) \
