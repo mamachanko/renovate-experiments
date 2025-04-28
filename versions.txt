@@ -1,2 +1,2 @@
 # renovate: datasource=github-releases depName=svu packageName=caarlos0/svu
-SVU_VERSION=3.2.3
+SVU_VERSION=3.2.0
