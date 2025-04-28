@@ -39,6 +39,7 @@ SHELL := bash
 MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
+# renovate: datasource=docker depName=renovate packageName=ghcr.io/renovatebot/renovate
 RENOVATE_VERSION ?= 36.25.5
 RENOVATE_REPOSITORY ?= mamachanko/renovate-experiments
 RENOVATE_LOG_LEVEL ?= DEBUG
