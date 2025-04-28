@@ -75,9 +75,9 @@ endif
 	  --interactive \
 	  --workdir /src \
 	  --env LOG_LEVEL=$(RENOVATE_LOG_LEVEL) \
+	  --volume /root/.docker=$(PWD)/dockerconfig \
 	  ghcr.io/renovatebot/renovate:$(RENOVATE_VERSION) \
 	  renovate \
 	    --platform github \
 	    --token $${GITHUB_COM_TOKEN} \
-	    --dry-run \
 	    $(RENOVATE_REPOSITORY)
