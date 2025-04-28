@@ -6,3 +6,6 @@ GOLANGCILINT_VERSION=1.53.2
 
 # renovate: datasource=golang-version depName=golang
 GOLANG_VERSION=1.23.0
+
+# renovate: datasource=docker depName=stemcell packageName=ghcr.io/cloudfoundry/ubuntu-jammy-stemcell
+STEMCELL_VERSION=:1.639
