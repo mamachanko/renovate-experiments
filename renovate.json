@@ -9,6 +9,12 @@
   ],
   "prConcurrentLimit": 0,
   "prHourlyLimit": 0,
+  "packageRules": [
+    {
+      "matchDepNames": "yq",
+      "extractVersion": "^v?(?<version>.*)$"
+    }
+  ],
   "customManagers": [
     {
       "customType": "regex",
