@@ -11,4 +11,4 @@ GOLANG_VERSION=1.23.0
 STEMCELL_VERSION=1.639
 
 # renovate: datasource=github-releases depName=yq packageName=mikefarah/yq
-YQ_VERSION=4.40.0
+YQ_VERSION=v4.45.4
