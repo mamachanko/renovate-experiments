@@ -2,7 +2,7 @@
 SVU_VERSION=3.2.2
 
 # renovate: datasource=github-releases depName=golangci-lint packageName=golangci/golangci-lint
-GOLANGCILINT_VERSION=1.53.2
+GOLANGCILINT_VERSION=1.64.8
 
 # renovate: datasource=golang-version depName=golang
 GOLANG_VERSION=1.23.0
