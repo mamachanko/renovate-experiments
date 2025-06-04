@@ -8,7 +8,7 @@ GOLANGCILINT_VERSION=2.1.6
 GOLANG_VERSION=1.24.3
 
 # renovate: datasource=docker depName=stemcell packageName=ghcr.io/cloudfoundry/ubuntu-jammy-stemcell
-STEMCELL_VERSION=1.824
+STEMCELL_VERSION=1.829
 
 # renovate: datasource=github-releases depName=yq packageName=mikefarah/yq
 YQ_VERSION=4.45.4
