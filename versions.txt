@@ -14,4 +14,4 @@ STEMCELL_VERSION=1.829
 YQ_VERSION=4.45.4
 
 # renovate: datasource=maven depName=spring-boot packageName=org.springframework.boot:spring-boot
-SPRING_BOOT_VERSION=3.4.0
+SPRING_BOOT_VERSION=3.4.6
