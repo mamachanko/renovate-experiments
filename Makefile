@@ -8,7 +8,7 @@ MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
 # renovate: datasource=docker depName=renovate packageName=ghcr.io/renovatebot/renovate
-RENOVATE_VERSION ?= 40.26.1
+RENOVATE_VERSION ?= 40.41.0
 RENOVATE_REPOSITORY ?= mamachanko/renovate-experiments
 RENOVATE_LOG_LEVEL ?= DEBUG
 
