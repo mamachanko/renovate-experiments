@@ -13,6 +13,12 @@
     {
       "matchDepNames": "yq",
       "extractVersion": "^v?(?<version>.*)$"
+    },
+    {
+      "matchPackageNames": [
+        "org.springframework.boot"
+      ],
+      "allowedVersions": "< 3.5.0"
     }
   ],
   "customManagers": [
