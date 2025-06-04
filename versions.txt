@@ -11,7 +11,7 @@ GOLANG_VERSION=1.24.3
 STEMCELL_VERSION=1.824
 
 # renovate: datasource=github-releases depName=yq packageName=mikefarah/yq
-YQ_VERSION=4.40.0
+YQ_VERSION=4.45.4
 
 # renovate: datasource=maven depName=spring-boot packageName=org.springframework.boot:spring-boot
 SPRING_BOOT_VERSION=3.4.0
