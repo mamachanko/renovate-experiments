@@ -16,9 +16,9 @@
     },
     {
       "matchPackageNames": [
-        "org.springframework.boot"
+        "org.springframework.boot:spring-boot"
       ],
-      "allowedVersions": "<=3.4"
+      "allowedVersions": "< 3.5.0"
     }
   ],
   "customManagers": [
